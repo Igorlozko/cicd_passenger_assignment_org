@@ -32,7 +32,6 @@ public class Passenger {
                 return this.title;
             }
         }
-
     private String title() {
         return null;
     }
@@ -41,8 +40,6 @@ public class Passenger {
             this.title = newTitle;
         return newTitle;
     }
-
-
         public String getName(){
             if (this.name.length() <3) {
                 System.out.println("Error!, You must enter a Name(min 3 char). ");
@@ -50,15 +47,11 @@ public class Passenger {
             }
             return this.name;
         }
-
         public String setName(String newName){
             this.name = newName;
             //System.out.println("Name selected");
             return newName;
         }
-
-
-
         public String getID() {
             int length = this.id.length();
             if (length < 10) {
@@ -67,7 +60,6 @@ public class Passenger {
             }
             return this.id;
         }
-
         public void setID(String newID) {
             this.id = newID;
         }
@@ -84,8 +76,6 @@ public class Passenger {
     public void setPhone(String newPhone) {
         this.phone = newPhone;
     }
-
-
     public int getAge(){
             if (this.age < 16) {
                     System.out.println("Too young to fly seat not reserved");
