@@ -1,5 +1,6 @@
 package ie.PassengerAssignment;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Passenger {
@@ -28,12 +29,21 @@ public class Passenger {
             }
         }
 
+        public void setTitle(String newTitle) {
+            this.title = newTitle;
+        }
+
+
         public String getName(){
             if (this.name.length() <3) {
                 System.out.println("Error!, You must enter a Name. ");
                 return "Error!, You must enter a Name. ";
             }
             return this.name;
+        }
+
+        public void setName(String newName){
+            this.name = newName;
         }
 
 
