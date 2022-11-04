@@ -7,14 +7,12 @@ public class mainprogram {
 
     }
 
-
-
         private static int getLength(int num) {
-            int count = 1;
+           int count = 1;
             while (num >= 10) {
                 num = num / 10;
                 count++;
             }
             return count;
-        }
+       }
 }

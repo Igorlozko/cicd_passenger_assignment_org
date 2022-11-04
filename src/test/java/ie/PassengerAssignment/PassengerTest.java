@@ -13,21 +13,33 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class PassengerTest {
     Passenger myPassenger ;
+    Passenger myPassenger1 ;
+    Passenger myPassenger2 ;
 
     @BeforeEach
     void setUp() {
         myPassenger = new Passenger("Mr", "igor", "1233567891", "08710123123", 20);
+        myPassenger1 = new Passenger("Ms", "igor", "1233567891", "08710123123", 20);
+        myPassenger2 = new Passenger("Mrs", "igor", "1233567891", "08710123123", 20);
     }
     @Test
-    void test_ValidTitle() {
+    void test_ValidMrTitle() {
        assertEquals("Mr", myPassenger.getTitle());
     }
     @Test
+    void test_ValidMsTitle() {
+        assertEquals("Ms", myPassenger1.getTitle());
+    }
+   @Test
+    void test_ValidMrsTitle() {
+        assertEquals("Mrs", myPassenger2.getTitle());
+    }
+    @Test
     void Test_InvalidTitle() {
-        myPassenger.setTitle("bad title");
-        String errString = "Error!, You must enter a correct title. ";
+        String invalidTitle1 = myPassenger.setTitle("bad title");
+       // String errString = "Error!, You must enter a correct title(Mr/Ms/Mrs). ";
         String result = myPassenger.getTitle();
-        assertEquals(errString, result);
+        assertEquals(invalidTitle1, result);
     }
     @Test
     void test_ValidName() {
@@ -35,10 +47,10 @@ class PassengerTest {
     }
     @Test
     void Test_InvalidName() {
-        myPassenger.setName("m");
-        String errString = "Error!, You must enter a Name. ";
+       String invalidName1 =  myPassenger.setName("m");
+       // String errString = "Error!, You must enter a Name(min 3 char). ";
         String result = myPassenger.getName();
-        assertEquals(errString, result);
+        assertEquals(invalidName1, result);
     }
     @Test
     void test_ValidAge() {

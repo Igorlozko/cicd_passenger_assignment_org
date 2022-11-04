@@ -1,8 +1,5 @@
 package ie.PassengerAssignment;
 
-import java.util.Locale;
-import java.util.Scanner;
-
 public class Passenger {
 
     private String title;
@@ -20,30 +17,40 @@ public class Passenger {
     }
 
         public String getTitle() {
-            String lowerTitle = this.title.toLowerCase();
-            if (lowerTitle.equals("mr") || lowerTitle.equals("mrs") || lowerTitle.equals("ms")) {
+            String title1 = this.title();
+          //  String lowerTitle = this.title.toLowerCase();
+            if (this.title.equals("Mr") || this.title.equals("Mrs") || this.title.equals("Ms")) {
+                System.out.println("Title selected");
                 return this.title;
             } else {
-                System.out.println("Error!, You must enter a correct title. ");
-                return "Error!, You must enter a correct title. ";
+                System.out.println("Error!, You must enter a correct title(Mr/Ms/Mrs). ");
+              //  return "Error!, You must enter a correct title. ";
+                return this.title;
             }
         }
 
-        public void setTitle(String newTitle) {
+    private String title() {
+        return null;
+    }
+
+    public String setTitle(String newTitle) {
             this.title = newTitle;
-        }
+        return newTitle;
+    }
 
 
         public String getName(){
             if (this.name.length() <3) {
-                System.out.println("Error!, You must enter a Name. ");
-                return "Error!, You must enter a Name. ";
+                System.out.println("Error!, You must enter a Name(min 3 char). ");
+                //return "Error!, You must enter a Name. ";
             }
             return this.name;
         }
 
-        public void setName(String newName){
+        public String setName(String newName){
             this.name = newName;
+            //System.out.println("Name selected");
+            return newName;
         }
 
 
@@ -80,11 +87,12 @@ public class Passenger {
                     System.out.println("Too young to fly seat not reserved");
                     return 0;
             } else {
-                System.out.println("Seat Reserved");
+                System.out.println("Seat Reserved(over 16)");
                 return age;
             }
     }
     public void setAge(int newAge) {
         this.age = newAge;
+
     }
 }
