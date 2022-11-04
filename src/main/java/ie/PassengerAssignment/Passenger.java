@@ -1,3 +1,7 @@
+//Ignats Lozko
+//G00390368
+//Passenger class with PassengerTest testing the class
+
 package ie.PassengerAssignment;
 
 public class Passenger {
@@ -83,7 +87,7 @@ public class Passenger {
 
 
     public int getAge(){
-            if (this.age < 10) {
+            if (this.age < 16) {
                     System.out.println("Too young to fly seat not reserved");
                     return 0;
             } else {
